@@ -1,5 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <circle cx="32" cy="32" r="30" fill="#2f6d4f"/>
-  <circle cx="32" cy="32" r="30" fill="none" stroke="#1f4d38" stroke-width="2"/>
-  <text x="32" y="42" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700" fill="#fafaf8">L</text>
+  <defs>
+    <linearGradient id="coin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#37e08a"/>
+      <stop offset="100%" stop-color="#ffcb47"/>
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="30" fill="url(#coin)"/>
+  <polyline points="16,42 27,31 34,38 48,22" fill="none" stroke="#0a0d0c" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="38,22 48,22 48,32" fill="none" stroke="#0a0d0c" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

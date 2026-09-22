@@ -1,28 +1,37 @@
 /* ==========================================================================
-   Loonie marketing site — same calm, editorial design language as the app:
-   serif headings, generous whitespace, muted green accent, no heavy shadows.
+   Loonie marketing site — bold, dark, Gen-Z-leaning design: near-black
+   canvas, glowing green/gold/violet gradients, big geometric display type.
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-serif: 'Source Serif 4', Georgia, serif;
+  --font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 
-  --bg: #fafaf8;
-  --bg-elevated: #ffffff;
-  --bg-alt: #f2f1ea;
-  --border: #e5e2da;
-  --border-strong: #d4d0c4;
-  --text: #1f2420;
-  --text-muted: #6b6f68;
-  --accent: #2f6d4f;
-  --accent-strong: #1f4d38;
-  --accent-soft: #e7f0ea;
+  --bg: #0a0d0c;
+  --bg-elevated: #14181a;
+  --bg-alt: #101413;
+  --border: #23292a;
+  --border-strong: #343b3c;
+  --text: #f4f6f4;
+  --text-muted: #9aa39d;
 
-  --radius: 10px;
-  --shadow-sm: 0 1px 2px rgba(31, 36, 32, 0.06);
+  --accent: #37e08a;
+  --accent-strong: #26c274;
+  --accent-soft: rgba(55, 224, 138, 0.12);
+  --gold: #ffcb47;
+  --violet: #b18aff;
+  --pink: #ff6fa5;
+
+  --gradient-brand: linear-gradient(135deg, #37e08a 0%, #ffcb47 100%);
+  --gradient-text: linear-gradient(100deg, #37e08a 0%, #ffcb47 55%, #ff9f5a 100%);
+  --gradient-violet: linear-gradient(135deg, #b18aff 0%, #ff6fa5 100%);
+
+  --radius: 14px;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-glow: 0 8px 30px rgba(55, 224, 138, 0.18);
   --container: 1080px;
 }
 
@@ -44,10 +53,18 @@ body {
 }
 
 h1, h2, h3 {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-weight: 700;
-  color: var(--accent-strong);
+  color: var(--text);
   margin: 0 0 12px;
+  letter-spacing: -0.01em;
+}
+
+.gradient-text {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 p {
@@ -78,8 +95,8 @@ code, .mono {
   position: sticky;
   top: 0;
   z-index: 20;
-  background: rgba(250, 250, 248, 0.9);
-  backdrop-filter: blur(6px);
+  background: rgba(10, 13, 12, 0.75);
+  backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
 }
 
@@ -97,25 +114,18 @@ code, .mono {
   align-items: center;
   gap: 10px;
   text-decoration: none;
-  color: var(--accent-strong);
+  color: var(--text);
 }
 
 .brand-mark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: var(--accent);
-  color: #fff;
-  font-family: var(--font-serif);
-  font-weight: 700;
-  font-size: 15px;
 }
 
 .brand-word {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-weight: 700;
   font-size: 19px;
 }
@@ -129,12 +139,12 @@ code, .mono {
 }
 
 .nav-links a:not(.btn) {
-  color: var(--text);
+  color: var(--text-muted);
   text-decoration: none;
 }
 
 .nav-links a:not(.btn):hover {
-  color: var(--accent-strong);
+  color: var(--text);
 }
 
 .nav-toggle {
@@ -162,31 +172,34 @@ code, .mono {
   font-size: 14px;
   font-weight: 600;
   padding: 10px 18px;
-  border-radius: 6px;
+  border-radius: 999px;
   border: 1px solid var(--border-strong);
   background: var(--bg-elevated);
   color: var(--text);
   text-decoration: none;
   cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
 }
 
 .btn:hover {
   border-color: var(--accent);
+  transform: translateY(-1px);
 }
 
 .btn-primary {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #fff;
+  background: var(--gradient-brand);
+  border-color: transparent;
+  color: #06231a;
+  box-shadow: var(--shadow-glow);
 }
 
 .btn-primary:hover {
-  background: var(--accent-strong);
-  border-color: var(--accent-strong);
+  box-shadow: 0 10px 36px rgba(55, 224, 138, 0.32);
 }
 
 .btn-ghost {
   background: transparent;
+  color: var(--text);
 }
 
 .btn-sm {
@@ -195,41 +208,51 @@ code, .mono {
 }
 
 .btn-lg {
-  padding: 13px 24px;
+  padding: 13px 26px;
   font-size: 15px;
 }
 
 /* ---------- hero ---------- */
 
 .hero {
-  padding: 96px 0 72px;
+  position: relative;
+  padding: 110px 0 76px;
   text-align: center;
+  overflow: hidden;
   background:
-    radial-gradient(ellipse at 50% 0%, var(--accent-soft) 0%, transparent 60%);
+    radial-gradient(circle at 18% 10%, rgba(55, 224, 138, 0.22) 0%, transparent 45%),
+    radial-gradient(circle at 85% 20%, rgba(255, 203, 71, 0.16) 0%, transparent 45%),
+    radial-gradient(circle at 60% 90%, rgba(177, 138, 255, 0.14) 0%, transparent 50%);
 }
 
 .hero-inner {
+  position: relative;
   max-width: 720px;
 }
 
 .eyebrow {
-  font-size: 13px;
+  display: inline-block;
+  font-size: 12.5px;
   font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 18px;
+  letter-spacing: 0.03em;
+  color: var(--text);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  padding: 6px 14px;
+  margin-bottom: 22px;
 }
 
 .hero-title {
-  font-size: 64px;
+  font-size: 76px;
   margin-bottom: 4px;
 }
 
 .hero-subtitle {
   font-size: 20px;
   color: var(--text-muted);
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
+  font-weight: 500;
   margin-bottom: 20px;
 }
 
@@ -305,12 +328,13 @@ code, .mono {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  background: var(--accent);
-  color: #fff;
-  font-family: var(--font-serif);
+  background: var(--gradient-brand);
+  color: #06231a;
+  font-family: var(--font-display);
   font-weight: 700;
   font-size: 16px;
   text-align: center;
+  box-shadow: var(--shadow-glow);
 }
 
 .module-grid {
@@ -342,6 +366,7 @@ code, .mono {
 .module-live {
   border-color: var(--accent);
   background: var(--accent-soft);
+  box-shadow: var(--shadow-glow);
 }
 
 .module-badge {
@@ -352,13 +377,13 @@ code, .mono {
   text-transform: uppercase;
   padding: 3px 8px;
   border-radius: 999px;
-  background: var(--accent);
-  color: #fff;
+  background: var(--gradient-brand);
+  color: #06231a;
 }
 
 .module-badge-soon {
   background: var(--border-strong);
-  color: var(--text);
+  color: var(--text-muted);
 }
 
 /* ---------- ai ---------- */
@@ -389,6 +414,7 @@ code, .mono {
   padding: 14px 18px;
   font-size: 14.5px;
   box-shadow: var(--shadow-sm);
+  border-left: 3px solid var(--violet);
 }
 
 /* ---------- privacy ---------- */
@@ -421,6 +447,7 @@ code, .mono {
   border-radius: var(--radius);
   padding: 14px 18px;
   font-size: 14.5px;
+  border-left: 3px solid var(--accent);
 }
 
 /* ---------- pillars ---------- */
@@ -441,8 +468,8 @@ code, .mono {
   height: 46px;
   margin: 0 auto 12px;
   border-radius: 50%;
-  background: var(--accent-soft);
-  color: var(--accent-strong);
+  background: var(--gradient-violet);
+  color: #1a0f2e;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -475,9 +502,10 @@ code, .mono {
   max-width: 680px;
   margin: 0 auto;
   text-align: center;
-  font-family: var(--font-serif);
-  font-size: 21px;
-  color: var(--accent-strong);
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 22px;
+  color: var(--text);
   border: none;
   padding: 0;
 }
@@ -487,7 +515,10 @@ code, .mono {
   font-family: var(--font-sans);
   font-size: 14px;
   font-weight: 700;
-  color: var(--text);
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 /* ---------- install ---------- */
@@ -514,17 +545,18 @@ code, .mono {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  background: var(--text);
-  color: #f2f1ea;
-  border-radius: 6px;
+  background: #05070a;
+  border: 1px solid var(--border-strong);
+  color: var(--accent);
+  border-radius: 10px;
   padding: 12px 14px;
   font-size: 13px;
-  overflow-x: auto;
   margin-bottom: 20px;
 }
 
 .install-command code {
   white-space: nowrap;
+  overflow-x: auto;
 }
 
 .install-command .btn {
