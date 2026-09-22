@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#e7f0ea"/>
+      <stop offset="100%" stop-color="#fafaf8"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="140" cy="170" r="46" fill="#2f6d4f"/>
+  <text x="140" y="187" text-anchor="middle" font-family="Georgia, serif" font-size="46" font-weight="700" fill="#fafaf8">L</text>
+  <text x="220" y="200" font-family="Georgia, serif" font-size="64" font-weight="700" fill="#1f4d38">Loonie</text>
+  <text x="140" y="290" font-family="Georgia, serif" font-size="34" fill="#6b6f68">Your Life Operating System</text>
+  <text x="140" y="350" font-family="Arial, sans-serif" font-size="28" font-weight="600" fill="#1f2420">See the whole picture. Make better decisions.</text>
+  <text x="140" y="390" font-family="Arial, sans-serif" font-size="28" font-weight="600" fill="#1f2420">Grow together.</text>
+</svg>
