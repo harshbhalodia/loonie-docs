@@ -16,22 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   })
 
-  const copyBtn = document.getElementById('copy-btn')
-  const installCmd = document.getElementById('install-cmd')
-
-  copyBtn?.addEventListener('click', async () => {
-    try {
-      await navigator.clipboard.writeText(installCmd.textContent.trim())
-      const original = copyBtn.textContent
-      copyBtn.textContent = 'Copied!'
-      setTimeout(() => {
-        copyBtn.textContent = original
-      }, 1800)
-    } catch {
-      // Clipboard API unavailable (e.g. non-HTTPS/older browser) - fail silently, text is selectable.
-    }
-  })
-
   initReveal()
   initStoryDemo()
 
@@ -72,8 +56,8 @@ function initReveal() {
   })
 }
 
-// Every scenario mirrors a real Loonie feature: Decision Maker, goal feasibility + scenario sandbox,
-// marketplace stress-test blueprints, and statement import. Figures are illustrative.
+// Every scenario mirrors something Guru really does: decisions, goal checks, advisor stress tests,
+// statement import and multi-currency. Figures are illustrative.
 function initStoryDemo() {
   const root = document.getElementById('demo')
   if (!root) return
@@ -85,10 +69,11 @@ function initStoryDemo() {
         { ctx: ['networth', 'runway'], title: 'Built your profile snapshot', detail: 'Net worth and cash runway are computed from your accounts, not typed in. Runway: 7.4 months.' },
         { ctx: ['cashflow'], title: 'Read your real cash flow', detail: 'Six months of income and spending confirm the $500 is genuinely spare.' },
         { ctx: ['goals'], title: 'Checked what it does to your goals', detail: 'Your home goal stays on track either way.' },
-        { action: true, title: 'Asked the decision engine', detail: 'Your two options and your profile go in; a choice, confidence and odds come back.' },
-        { action: true, title: 'Saved it to your history', detail: 'Every Pilot chat is searchable, so you can revisit why you chose it.' },
+        { action: true, title: 'Weighed both options', detail: 'Your two options and your profile go in; a choice, confidence and odds come back.' },
+        { action: true, title: 'Saved it to your history', detail: 'Every Guru chat is searchable, so you can revisit why you chose it.' },
       ],
-      result: { title: 'Invest it \u2014 71% confidence', body: 'Your runway is healthy and your expected returns beat your loan rate. Odds: invest 71%, pay down 29%.', cta: 'Kept in your Pilot history' },
+      result: { title: 'Invest it \u2014 71% confidence', body: 'Your runway is healthy and your expected returns beat your loan rate.', cta: 'Kept in your Guru history' },
+      tiles: [['Invest', '71%'], ['Pay down', '29%'], ['Runway', '7.4 mo']],
       generic: '\u201CIt depends on your interest rate, risk tolerance and goals. Could you share your loan rate, income and savings?\u201D',
     },
     {
@@ -100,29 +85,32 @@ function initStoryDemo() {
         { ctx: ['networth', 'allocation'], title: 'Projected each account at its own growth rate', detail: 'Savings and investments grow differently, so they are modelled separately.' },
       ],
       result: { title: 'On track \u2014 with a $130/mo cushion', body: 'In the worst case you slip about five months. Adopt the expected case as your plan.', cta: 'Adopt this scenario' },
+      tiles: [['You need', '$1,020/mo'], ['You save', '$1,150/mo'], ['Cushion', '$130/mo']],
       generic: '\u201CTo estimate that, please share your savings, income, target price and expected returns.\u201D',
     },
     {
       prompt: 'What happens if I lose my job and rates rise?',
       steps: [
-        { ctx: ['networth', 'runway', 'cashflow'], title: 'Brought in the Job Loss advisor and asked first', detail: 'Pilot lists what it wants to read. Anything you decline stays private.' },
+        { ctx: ['networth', 'runway', 'cashflow'], title: 'Brought in the Job Loss advisor and asked first', detail: 'Guru lists what it wants to read. Anything you decline stays private.' },
         { action: true, title: 'Ran each shock as its own specialist', detail: 'Job loss, rate rise and market drop, each analysed separately.' },
         { ctx: ['allocation'], title: 'Found your weakest spot', detail: 'Investments are 68% of your net worth.' },
-        { action: true, title: 'Wrote one answer and remembered your choice', detail: 'Next time it can run straight away, and you can revoke access in Settings.' },
+        { action: true, title: 'Wrote one clear report', detail: 'Verdict, cash impact, pressure points and options, laid out to scan.' },
       ],
-      result: { title: 'Runway holds in the job-loss case', body: 'Six months of expenses stay covered. A market drop is your riskiest scenario \u2014 consider rebalancing.', cta: 'Review in Settings \u203a Advisors' },
+      result: { title: 'Your runway holds in the job-loss case', body: 'Six months of expenses stay covered. A market drop is your riskiest scenario \u2014 consider rebalancing.', cta: 'Review in Settings \u203a Advisors' },
+      tiles: [['Runway', '22 mo'], ['6-month loss', '$19,140'], ['Riskiest', 'Market drop']],
       generic: '\u201CLosing a job can be stressful. A good rule is an emergency fund of 3\u20136 months of expenses.\u201D',
     },
     {
       prompt: 'Here is this month\u2019s card statement (PDF).',
       steps: [
-        { action: true, title: 'Recognised the statement and matched your account', detail: 'Pilot works out which account it belongs to. You confirm if unsure.' },
+        { action: true, title: 'Recognised the statement and matched your account', detail: 'Guru works out which account it belongs to. You confirm if unsure.' },
         { action: true, title: 'Read the PDF on your computer', detail: 'Every transaction extracted with your own local AI model.' },
         { action: true, title: 'Applied your category rules', detail: 'Your keyword rules always beat the AI\u2019s guess.' },
         { ctx: ['budget'], title: 'Checked it against your budgets', detail: 'Dining is 18% over its monthly budget.' },
         { action: true, title: 'Skipped duplicates and suggested new rules', detail: 'New merchants become suggestions you approve.' },
       ],
-      result: { title: '42 transactions ready to review', body: '38 categorised by your rules, 4 need your call. Review them right in the chat; nothing is saved until you apply it.', cta: 'Review & apply' },
+      result: { title: '42 transactions ready to review', body: 'Review them right in the chat; nothing is saved until you apply it.', cta: 'Review & apply' },
+      tiles: [['Found', '42'], ['Categorised', '38'], ['Need you', '4']],
       generic: '\u201CPaste the transactions here and I\u2019ll try to sort them. Next month, paste them again.\u201D',
     },
     {
@@ -133,7 +121,8 @@ function initStoryDemo() {
         { ctx: ['allocation'], title: 'Converted everything into your base currency', detail: 'So one number adds up your whole picture.' },
         { action: true, title: 'Kept the breakdown by currency', detail: 'You can see how much of it sits in each.' },
       ],
-      result: { title: 'C$84,210 in total', body: '58% is in CAD, 27% in USD and 15% in INR. Figures are illustrative; yours use your own accounts.', cta: 'Open Currencies' },
+      result: { title: 'C$84,210 in total', body: 'One number for your whole picture, with each currency still visible on its own.', cta: 'Open Currencies' },
+      tiles: [['CAD', '58%'], ['USD', '27%'], ['INR', '15%']],
       generic: '\u201CI can\u2019t see your accounts. Tell me the balances and today\u2019s rates and I\u2019ll add them up.\u201D',
     },
   ]
@@ -145,6 +134,7 @@ function initStoryDemo() {
   const resultEl = document.getElementById('demo-result')
   const titleEl = document.getElementById('demo-result-title')
   const bodyEl = document.getElementById('demo-result-body')
+  const tilesEl = document.getElementById('demo-tiles')
   const ctaEl = document.getElementById('demo-result-cta')
   const genericEl = document.getElementById('demo-generic')
   const chips = Array.from(root.querySelectorAll('.demo-chip'))
@@ -187,6 +177,18 @@ function initStoryDemo() {
     titleEl.textContent = s.result.title
     bodyEl.textContent = s.result.body
     ctaEl.textContent = s.result.cta
+    tilesEl.replaceChildren(
+      ...s.tiles.map(([label, value]) => {
+        const tile = document.createElement('span')
+        tile.className = 'demo-tile'
+        const small = document.createElement('small')
+        small.textContent = label
+        const strong = document.createElement('strong')
+        strong.textContent = value
+        tile.append(small, strong)
+        return tile
+      }),
+    )
     resultEl.hidden = false
   }
 
@@ -225,10 +227,10 @@ function initStoryDemo() {
       li.classList.add('is-working')
       stepsEl.append(li)
       lightChips(step.ctx || [])
-      await wait(1100)
+      await wait(1000)
       if (!alive()) return
       li.classList.replace('is-working', 'is-done')
-      await wait(250)
+      await wait(220)
     }
 
     if (!alive()) return
