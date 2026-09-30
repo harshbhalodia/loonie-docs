@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Loonie — Plan with purpose. Decide with clarity. Pivot with confidence.</title>
-  <meta name="description" content="Loonie is a private Windows app that puts your whole financial picture in one place. Ask Guru in plain words and get answers from your own numbers. AI only when you need it." />
+  <title>Loonie — Your life is connected. Your plan should be too.</title>
+  <meta name="description" content="Loonie is a private life planner and coach that helps you understand your situation, make informed decisions, plan what comes next, and adapt as life changes. Start with your money and grow into a connected view of your life." />
 
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Loonie — Ask Guru about your money" />
-  <meta property="og:description" content="Your whole financial picture in one private place. Ask Guru in plain words and get answers from your own numbers." />
+  <meta property="og:title" content="Loonie — Your life is connected. Your plan should be too." />
+  <meta property="og:description" content="Your personal life planner and coach. Start with your money, connect it to the rest of your life, and ask Guru in plain words." />
   <meta property="og:image" content="https://loonie.ai/assets/og-image.svg" />
   <meta name="twitter:card" content="summary_large_image" />
 
@@ -24,17 +24,17 @@
         <stop offset="1" stop-color="#ffcb47" />
       </linearGradient>
       <symbol id="guru-mark" viewBox="0 0 120 120">
-        <g stroke="currentColor" stroke-opacity="0.35" stroke-width="1.8" fill="none" stroke-linejoin="round" stroke-linecap="round">
+        <g stroke="currentColor" stroke-opacity="0.6" stroke-width="2.4" fill="none" stroke-linejoin="round" stroke-linecap="round">
           <polygon points="60,20 94.64,40 94.64,80 60,100 25.36,80 25.36,40" />
           <line x1="60" y1="60" x2="60" y2="20" /><line x1="60" y1="60" x2="94.64" y2="40" />
           <line x1="60" y1="60" x2="94.64" y2="80" /><line x1="60" y1="60" x2="60" y2="100" />
           <line x1="60" y1="60" x2="25.36" y2="80" /><line x1="60" y1="60" x2="25.36" y2="40" />
         </g>
         <g fill="url(#guru-grad)">
-          <circle cx="60" cy="20" r="5.5" /><circle cx="94.64" cy="40" r="5.5" /><circle cx="94.64" cy="80" r="5.5" />
-          <circle cx="60" cy="100" r="5.5" /><circle cx="25.36" cy="80" r="5.5" /><circle cx="25.36" cy="40" r="5.5" />
+          <circle cx="60" cy="20" r="7.5" /><circle cx="94.64" cy="40" r="7.5" /><circle cx="94.64" cy="80" r="7.5" />
+          <circle cx="60" cy="100" r="7.5" /><circle cx="25.36" cy="80" r="7.5" /><circle cx="25.36" cy="40" r="7.5" />
         </g>
-        <circle cx="60" cy="60" r="17" fill="#06231a" stroke="url(#guru-grad)" stroke-width="2.5" />
+        <circle cx="60" cy="60" r="19" fill="#06231a" stroke="url(#guru-grad)" stroke-width="3" />
         <path d="M60 49Q60 60 71 60Q60 60 60 71Q60 60 49 60Q60 60 60 49Z" fill="url(#guru-grad)" />
       </symbol>
     </defs>
@@ -62,11 +62,16 @@
     <!-- HERO: the purpose in one line, then the idea running live -->
     <section class="hero hero-compact" id="guru">
       <div class="container hero-wide">
-        <span class="guru-chip"><svg class="guru-logo" width="22" height="22" aria-hidden="true"><use href="#guru-mark" /></svg> Meet Guru</span>
-        <h1 class="hero-purpose">Ask about your money.<br /><span class="gradient-text">Get answers from your own numbers.</span></h1>
+        <span class="guru-chip"><svg class="guru-logo" width="36" height="36" aria-hidden="true"><use href="#guru-mark" /></svg> Meet Guru</span>
+        <h1 class="hero-purpose">Your life is connected.<br /><span class="gradient-text">Your plan should be too.</span></h1>
         <p class="hero-body">
-          Loonie puts your whole financial picture in one private place. Guru, your guide, reads it and answers in
-          plain words. Pick a question to watch it work.
+          Loonie is your personal life planner and coach. It helps you understand where you are, make informed
+          decisions, plan what comes next, and adapt when life changes.
+        </p>
+        <p class="hero-start"><b>Start with your money. Connect it to the rest of your life.</b></p>
+        <p class="hero-guru">
+          Tell Guru what is going on in plain words. It connects your goals, numbers and context, and specialised
+          advisors give it the know-how for real-life situations. Pick a question to watch it work.
         </p>
 
         <div class="demo" id="demo">
@@ -81,8 +86,8 @@
           <div class="demo-window">
             <div class="demo-chat" aria-live="polite">
               <div class="demo-head">
-                <svg class="guru-logo" width="30" height="30" aria-hidden="true"><use href="#guru-mark" /></svg>
-                <div><b>Guru</b><span>Your guide across every part of your life</span></div>
+                <svg class="guru-logo" width="56" height="56" aria-hidden="true"><use href="#guru-mark" /></svg>
+                <div><b>Guru</b><span>Connects the parts of your life that matter</span></div>
               </div>
               <div class="demo-msg demo-user"><span id="demo-prompt"></span><i class="demo-caret" aria-hidden="true"></i></div>
               <ol class="demo-steps" id="demo-steps"></ol>
@@ -96,7 +101,7 @@
             </div>
 
             <aside class="demo-side">
-              <p class="demo-side-title">What Guru already knows</p>
+              <p class="demo-side-title">Guru starts with your situation</p>
               <div class="demo-chips" id="demo-chips">
                 <span class="demo-chip" data-ctx="networth">Net worth</span>
                 <span class="demo-chip" data-ctx="runway">Cash runway</span>
@@ -106,7 +111,7 @@
                 <span class="demo-chip" data-ctx="allocation">Allocation</span>
               </div>
               <div class="demo-generic">
-                <p class="demo-side-title">A general chatbot</p>
+                <p class="demo-side-title">A general AI gives</p>
                 <p class="demo-generic-text" id="demo-generic"></p>
               </div>
             </aside>
@@ -124,23 +129,23 @@
     <!-- TAGLINE + PLAN / DECIDE / PIVOT -->
     <section class="section section-alt" id="tagline">
       <div class="container">
-        <p class="tagline" aria-label="Plan with purpose. Decide with clarity. Pivot with confidence.">
+        <p class="tagline" aria-label="Plan with purpose. Decide with clarity. Adapt with confidence.">
           <span class="tl tl-plan"><b>Plan</b> with purpose.</span>
           <span class="tl tl-decide"><b>Decide</b> with clarity.</span>
-          <span class="tl tl-pivot"><b>Pivot</b> with confidence.</span>
+          <span class="tl tl-pivot"><b>Adapt</b> with confidence.</span>
         </p>
         <div class="tri-grid tri-compact">
           <div class="tri-card tri-plan reveal">
             <p class="tri-word">Plan</p>
-            <p>Goals and budgets that tell you if you are on track.</p>
+            <p>Turn what matters to you into a plan.</p>
           </div>
           <div class="tri-card tri-decide reveal">
             <p class="tri-word">Decide</p>
-            <p>Weigh your options and get a clear recommendation.</p>
+            <p>Understand your options before you choose.</p>
           </div>
           <div class="tri-card tri-pivot reveal">
-            <p class="tri-word">Pivot</p>
-            <p>Test &ldquo;what if&rdquo; before life changes anything.</p>
+            <p class="tri-word">Adapt</p>
+            <p>See what changes when life doesn&rsquo;t go to plan.</p>
           </div>
         </div>
       </div>
@@ -149,7 +154,8 @@
     <!-- COMPARE -->
     <section class="section" id="compare">
       <div class="container">
-        <h2 class="section-title">Same question. A very different starting line.</h2>
+        <h2 class="section-title">Same question. Different context.</h2>
+        <p class="section-lede">A general AI gives you general knowledge. Loonie Guru starts with your situation.</p>
 
         <div class="cmp-wrap reveal">
           <table class="cmp-table">
@@ -211,8 +217,11 @@
     <!-- WHOLE PICTURE: no AI needed; AI when needed; public AI only by choice -->
     <section class="section section-alt" id="picture">
       <div class="container">
-        <h2 class="section-title">See the whole picture. No AI needed.</h2>
-        <p class="section-lede">Your numbers are calculated on your own computer. AI is there when you ask for it, never before.</p>
+        <h2 class="section-title">Your life. Your data. Your choice.</h2>
+        <p class="section-lede">
+          Loonie keeps your core calculations and personal information on your computer, so you can see the whole
+          picture without AI. Use AI when it helps, and choose when information leaves your device.
+        </p>
 
         <div class="app-window" aria-hidden="true">
           <div class="app-titlebar">
@@ -222,7 +231,7 @@
           <div class="app-body">
             <aside class="app-sidebar">
               <span class="app-nav app-nav-active">Dashboard</span>
-              <span class="app-nav app-nav-guru"><svg width="14" height="14"><use href="#guru-mark" /></svg> Guru</span>
+              <span class="app-nav app-nav-guru"><svg width="20" height="20"><use href="#guru-mark" /></svg> Guru</span>
               <span class="app-nav-label">Wealth</span>
               <span class="app-nav">Accounts</span>
               <span class="app-nav">Budgets</span>
@@ -252,18 +261,18 @@
         <div class="tiers">
           <div class="tier tier-local reveal">
             <span class="tier-badge">Always local</span>
-            <h3>No AI needed</h3>
-            <p>Net worth, budgets, goals, forecasts and currencies are all worked out on your computer.</p>
+            <h3>Your calculations stay home</h3>
+            <p>Net worth, budgets, goals, forecasts and currencies are worked out on your computer. No AI needed.</p>
           </div>
           <div class="tier tier-ai reveal">
             <span class="tier-badge">When you need it</span>
             <h3>AI on your computer</h3>
-            <p>Ask Guru to explain, stress-test or read a statement, using a model that runs on your own machine.</p>
+            <p>Ask Guru privately to explain, stress-test or read a statement, using a model that runs on your own machine.</p>
           </div>
           <div class="tier tier-public reveal">
             <span class="tier-badge">Only if you choose</span>
             <h3>Public AI</h3>
-            <p>For big decisions you can switch on an online decision engine. It is off until you turn it on.</p>
+            <p>Use an online decision engine only when you choose. It is off until you turn it on.</p>
           </div>
         </div>
       </div>
@@ -272,11 +281,13 @@
     <!-- ONE LIFE ONE VIEW -->
     <section class="section">
       <div class="container">
-        <h2 class="section-title">One life. One view.</h2>
+        <p class="section-kicker">One life. One view.</p>
+        <h2 class="section-title">Your life doesn&rsquo;t happen in separate apps.</h2>
         <p class="section-lede">
-          Money affects travel. Health affects goals. Habits affect wealth. Loonie starts with Wealth and is
-          growing into every area where you plan, analyse and decide.
+          Money affects travel. Health affects goals. Career affects finances. Habits affect everything.
+          <b>Loonie brings the pieces together.</b>
         </p>
+        <p class="life-line">Starting with Wealth. Growing into the rest of life.</p>
         <div class="module-grid">
           <div class="module-card module-live"><span class="module-badge">Live</span><h3>Wealth</h3><p>Accounts, budgets, goals, net worth, forecasting, decisions &amp; stress tests.</p></div>
           <div class="module-card"><span class="module-badge module-badge-soon">Coming soon</span><h3>Health</h3><p>Physical &amp; mental capacity.</p></div>
@@ -312,7 +323,7 @@
         <img src="assets/favicon.svg" class="brand-mark" alt="" aria-hidden="true" />
         <div>
           <div class="brand-word">Loonie</div>
-          <div class="muted" style="font-size:13px;">Plan with purpose. Decide with clarity. Pivot with confidence.</div>
+          <div class="muted" style="font-size:13px;">Plan with purpose. Decide with clarity. Adapt with confidence.</div>
         </div>
       </div>
       <div class="footer-links">

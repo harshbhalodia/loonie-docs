@@ -2076,7 +2076,7 @@ html:not(.js) .cmp-table tbody tr {
 /* ---------- purpose-first hero + live Guru demo ---------- */
 
 .hero-compact {
-  padding: 72px 0 56px;
+  padding: 44px 0 56px;
 }
 
 .hero-wide {
@@ -2261,4 +2261,36 @@ html:not(.js) .cmp-table tbody tr {
   .hero-purpose {
     font-size: 34px;
   }
+}
+/* ---------- connected-life positioning ---------- */
+
+.hero-start {
+  margin: 0 auto 10px;
+  max-width: 640px;
+  font-size: 17px;
+  color: var(--text);
+}
+
+.hero-guru {
+  margin: 0 auto 28px;
+  max-width: 640px;
+  font-size: 15px;
+  color: var(--text-muted);
+}
+
+.guru-chip {
+  padding: 6px 18px 6px 8px;
+  font-size: 14px;
+}
+
+.demo-head {
+  gap: 14px;
+}
+
+.life-line {
+  margin: 0 0 22px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--accent);
 }
