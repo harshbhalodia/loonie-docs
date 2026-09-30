@@ -2294,3 +2294,209 @@ html:not(.js) .cmp-table tbody tr {
   font-size: 18px;
   color: var(--accent);
 }
+/* ---------- hero wordmark, Guru intro, examples ---------- */
+
+.hero-compact .hero-title {
+  font-size: 64px;
+  margin-bottom: 6px;
+}
+
+.hero-sub {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 1.2;
+  margin: 0 0 14px;
+}
+
+.hero-start {
+  font-family: var(--font-display);
+  font-size: 19px;
+}
+
+.hero-start b {
+  font-weight: 700;
+}
+
+.guru-better {
+  max-width: 820px;
+  margin: 0 auto 30px;
+  padding: 18px 20px;
+  text-align: left;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-elevated);
+}
+
+.guru-better-title {
+  margin: 0 0 12px;
+  font-size: 15px;
+  color: var(--text);
+}
+
+.guru-better-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 20px;
+}
+
+.guru-better-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 14px;
+}
+
+.guru-better-list b {
+  color: var(--accent);
+}
+
+.guru-better-list span {
+  color: var(--text-muted);
+}
+
+.guru-better-foot {
+  margin: 12px 0 0;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.tri-compact .tri-card {
+  text-align: left;
+}
+
+.tri-compact .tri-lead {
+  margin: 0 0 12px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--text);
+}
+
+.tri-compact .tri-card p.tri-eg {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.tri-eg span {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text);
+  opacity: 0.7;
+}
+
+/* ---------- Guru example: advantage and risk per goal / asset ---------- */
+
+.cover {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.cover-q {
+  max-width: 640px;
+  margin: 0 0 20px auto;
+  padding: 12px 16px;
+  background: var(--accent-soft);
+  border: 1px solid rgba(55, 224, 138, 0.35);
+  border-radius: 14px 14px 4px 14px;
+  font-size: 15px;
+}
+
+.cover-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.cover-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cover-head {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cover-head b {
+  font-family: var(--font-display);
+  font-size: 16px;
+}
+
+.cover-head span {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.cover-card p {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.cover-card p span {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.cover-pro span { color: var(--accent); }
+.cover-con span { color: var(--gold); }
+
+.cover-verdict {
+  border-color: rgba(55, 224, 138, 0.45);
+  background: linear-gradient(180deg, rgba(55, 224, 138, 0.1), var(--bg-elevated));
+}
+
+.cover-verdict p {
+  color: var(--text);
+}
+
+.cover-verdict p span {
+  display: inline-flex;
+  width: 20px;
+  height: 20px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 8px 0 0;
+  border-radius: 50%;
+  background: var(--gradient-brand);
+  color: #06231a;
+  letter-spacing: 0;
+}
+
+.cover-note {
+  margin: 14px 0 0;
+  font-size: 12.5px;
+  text-align: center;
+}
+
+@media (max-width: 860px) {
+  .cover-grid,
+  .guru-better-list {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-compact .hero-title {
+    font-size: 48px;
+  }
+}

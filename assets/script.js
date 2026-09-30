@@ -89,6 +89,18 @@ function initStoryDemo() {
       generic: '\u201CTo estimate that, please share your savings, income, target price and expected returns.\u201D',
     },
     {
+      prompt: 'Do I have enough risk covered for my current profile, or would you change anything?',
+      steps: [
+        { ctx: ['networth', 'allocation'], title: 'Looked at each goal and asset one by one', detail: 'Emergency fund, home down payment, investments, car and income.' },
+        { ctx: ['goals'], title: 'Listed each one\u2019s advantage and its risk', detail: 'Investments grow but are 68% of your net worth. The emergency fund is safe but slowly loses value to inflation.' },
+        { action: true, title: 'Stress-tested the weak spots together', detail: 'A 20% market drop at the same time as a job loss.' },
+        { ctx: ['runway'], title: 'Noted what it cannot see yet', detail: 'Insurance is not in Loonie yet. Tell Guru about your policies and it will include them.' },
+      ],
+      result: { title: 'Mostly covered, with two gaps', body: 'Consider moving about 10% from stocks into cash-like holdings, and add your insurance so Guru can check your income protection.', cta: 'See each goal and asset' },
+      tiles: [['Covered', '3 of 5'], ['Gaps', '2'], ['Biggest risk', 'Stocks 68%']],
+      generic: '\u201CEveryone\u2019s risk is different. You may want to speak to a financial adviser about insurance and diversification.\u201D',
+    },
+    {
       prompt: 'What happens if I lose my job and rates rise?',
       steps: [
         { ctx: ['networth', 'runway', 'cashflow'], title: 'Brought in the Job Loss advisor and asked first', detail: 'Guru lists what it wants to read. Anything you decline stays private.' },
