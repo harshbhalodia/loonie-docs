@@ -86,9 +86,9 @@ function initStoryDemo() {
         { ctx: ['cashflow'], title: 'Read your real cash flow', detail: 'Six months of income and spending confirm the $500 is genuinely spare.' },
         { ctx: ['goals'], title: 'Checked what it does to your goals', detail: 'Your home goal stays on track either way.' },
         { action: true, title: 'Asked the decision engine', detail: 'Your two options and your profile go in; a choice, confidence and odds come back.' },
-        { action: true, title: 'Saved it to your decision history', detail: 'So you can revisit why you chose it.' },
+        { action: true, title: 'Saved it to your history', detail: 'Every Pilot chat is searchable, so you can revisit why you chose it.' },
       ],
-      result: { title: 'Invest it \u2014 71% confidence', body: 'Your runway is healthy and your expected returns beat your loan rate. Odds: invest 71%, pay down 29%.', cta: 'Open in Decision Maker' },
+      result: { title: 'Invest it \u2014 71% confidence', body: 'Your runway is healthy and your expected returns beat your loan rate. Odds: invest 71%, pay down 29%.', cta: 'Kept in your Pilot history' },
       generic: '\u201CIt depends on your interest rate, risk tolerance and goals. Could you share your loan rate, income and savings?\u201D',
     },
     {
@@ -105,24 +105,36 @@ function initStoryDemo() {
     {
       prompt: 'What happens if I lose my job and rates rise?',
       steps: [
-        { ctx: ['networth', 'runway', 'cashflow'], title: 'Asked what the blueprint may see', detail: 'You tick net worth, liquidity and cash flow. Anything unticked stays private.' },
+        { ctx: ['networth', 'runway', 'cashflow'], title: 'Brought in the Job Loss advisor and asked first', detail: 'Pilot lists what it wants to read. Anything you decline stays private.' },
         { action: true, title: 'Ran each shock as its own specialist', detail: 'Job loss, rate rise and market drop, each analysed separately.' },
         { ctx: ['allocation'], title: 'Found your weakest spot', detail: 'Investments are 68% of your net worth.' },
-        { action: true, title: 'Wrote one advisory and kept the run', detail: 'Compare it with next quarter\u2019s run and rate how helpful it was.' },
+        { action: true, title: 'Wrote one answer and remembered your choice', detail: 'Next time it can run straight away, and you can revoke access in Settings.' },
       ],
-      result: { title: 'Runway holds in the job-loss case', body: 'Six months of expenses stay covered. A market drop is your riskiest scenario \u2014 consider rebalancing.', cta: 'Save this run' },
+      result: { title: 'Runway holds in the job-loss case', body: 'Six months of expenses stay covered. A market drop is your riskiest scenario \u2014 consider rebalancing.', cta: 'Review in Settings \u203a Advisors' },
       generic: '\u201CLosing a job can be stressful. A good rule is an emergency fund of 3\u20136 months of expenses.\u201D',
     },
     {
       prompt: 'Here is this month\u2019s card statement (PDF).',
       steps: [
+        { action: true, title: 'Recognised the statement and matched your account', detail: 'Pilot works out which account it belongs to. You confirm if unsure.' },
         { action: true, title: 'Read the PDF on your computer', detail: 'Every transaction extracted with your own local AI model.' },
         { action: true, title: 'Applied your category rules', detail: 'Your keyword rules always beat the AI\u2019s guess.' },
         { ctx: ['budget'], title: 'Checked it against your budgets', detail: 'Dining is 18% over its monthly budget.' },
         { action: true, title: 'Skipped duplicates and suggested new rules', detail: 'New merchants become suggestions you approve.' },
       ],
-      result: { title: '42 transactions ready to review', body: '38 categorised by your rules, 4 need your call. Nothing is saved until you apply it.', cta: 'Review & apply' },
+      result: { title: '42 transactions ready to review', body: '38 categorised by your rules, 4 need your call. Review them right in the chat; nothing is saved until you apply it.', cta: 'Review & apply' },
       generic: '\u201CPaste the transactions here and I\u2019ll try to sort them. Next month, paste them again.\u201D',
+    },
+    {
+      prompt: 'What is my net worth in CAD?',
+      steps: [
+        { ctx: ['networth'], title: 'Found accounts in three currencies', detail: 'Canadian dollars, US dollars and rupees.' },
+        { action: true, title: 'Fetched today\u2019s exchange rates', detail: 'From a live source, with a backup if it is down. A rate you pinned wins.' },
+        { ctx: ['allocation'], title: 'Converted everything into your base currency', detail: 'So one number adds up your whole picture.' },
+        { action: true, title: 'Kept the breakdown by currency', detail: 'You can see how much of it sits in each.' },
+      ],
+      result: { title: 'C$84,210 in total', body: '58% is in CAD, 27% in USD and 15% in INR. Figures are illustrative; yours use your own accounts.', cta: 'Open Currencies' },
+      generic: '\u201CI can\u2019t see your accounts. Tell me the balances and today\u2019s rates and I\u2019ll add them up.\u201D',
     },
   ]
 
