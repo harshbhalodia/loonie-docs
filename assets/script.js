@@ -19,6 +19,20 @@ document.addEventListener('DOMContentLoaded', () => {
   initReveal()
   initStoryDemo()
 
+  // Reads the href at click time so it reports the real installer URL once latest.json has loaded.
+  document.querySelectorAll('.js-download').forEach((a) => {
+    a.addEventListener('click', () => {
+      if (typeof gtag !== 'function') return
+      const url = a.getAttribute('href') || ''
+      gtag('event', 'file_download', {
+        file_name: url.split('/').pop(),
+        link_url: url,
+        link_id: a.closest('#download') ? 'download_section' : 'hero',
+        platform: 'windows',
+      })
+    })
+  })
+
   // Same manifest the in-app auto-updater reads, so the download button always points at the
   // current release without editing this page. Falls back to the GitHub installer folder.
   fetch('https://raw.githubusercontent.com/harshbhalodia/loonie/main/updater/latest.json', { cache: 'no-store' })
