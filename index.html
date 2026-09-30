@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Loonie — Plan with purpose. Decide with clarity. Pivot with confidence.</title>
-  <meta name="description" content="Loonie is your co-partner for the big decisions in growing your wealth and your life. Plan goals, make structured decisions, and stress-test your future using your own real numbers. A private, local-first app for Windows." />
+  <meta name="description" content="Loonie is a free, private Windows app for your money and your big decisions. Ask Guru in plain words and get clear answers from your own numbers." />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Loonie — Plan with purpose. Decide with clarity. Pivot with confidence." />
-  <meta property="og:description" content="Your co-partner for the big decisions in wealth and life. Structured plans, clear decisions and confident pivots — grounded in your own numbers, private on your computer." />
+  <meta property="og:description" content="Ask Guru in plain words. Clear answers from your own numbers, private on your computer." />
   <meta property="og:image" content="https://loonie.ai/assets/og-image.svg" />
   <meta name="twitter:card" content="summary_large_image" />
 
@@ -23,12 +23,8 @@
         <span class="brand-word">Loonie</span>
       </a>
       <nav class="nav-links" id="nav-links">
-        <a href="#story">How it works</a>
-        <a href="#pilot">Pilot</a>
-        <a href="#compare">Compare</a>
-        <a href="#features">Features</a>
-        <a href="#advisors">Advisors</a>
-        <a href="#privacy">Privacy</a>
+        <a href="#guru">Guru</a>
+        <a href="#how">How it helps</a>
         <a href="#download" class="btn btn-primary btn-sm">Download</a>
       </nav>
       <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
@@ -38,10 +34,8 @@
   </header>
 
   <main id="top">
-    <!-- HERO -->
     <section class="hero">
       <div class="container hero-inner">
-        <a href="#pilot" class="eyebrow eyebrow-link"><span class="eyebrow-new">New</span> Meet Pilot: one chat for your whole financial life &rarr;</a>
         <h1 class="hero-title gradient-text">Loonie</h1>
         <p class="tagline" aria-label="Plan with purpose. Decide with clarity. Pivot with confidence.">
           <span class="tl tl-plan"><b>Plan</b> with purpose.</span>
@@ -49,525 +43,92 @@
           <span class="tl tl-pivot"><b>Pivot</b> with confidence.</span>
         </p>
         <p class="hero-body">
-          Loonie is your co-partner for the biggest decisions in growing your wealth and your life. Ask
-          Pilot anything: it reads your real numbers, in any currency, and turns them into plans and clear
-          decisions. Wealth today &mdash; more of life next.
+          Your money and your big decisions in one calm place. Just ask Guru, and get a clear answer from your own numbers.
         </p>
         <div class="hero-actions">
           <a href="https://github.com/harshbhalodia/loonie/tree/main/installer" class="btn btn-primary btn-lg js-download">Download for Windows</a>
-          <a href="#story" class="btn btn-ghost btn-lg">Watch it work</a>
         </div>
-        <p class="hero-meta muted">
-          Windows 10/11 &middot; Free &amp; open source &middot; <span class="js-version">Latest version</span>
-        </p>
+        <p class="hero-meta muted">Windows 10/11 &middot; Free &middot; <span class="js-version">Latest version</span></p>
       </div>
     </section>
 
-    <!-- STORY: animated demo (every step is a real feature) -->
-    <section class="section story" id="story">
-      <div class="container">
-        <p class="section-kicker">See it in action</p>
-        <h2 class="section-title">Real questions. Answers from your own numbers.</h2>
-        <p class="section-lede">
-          Pick a question. Watch Pilot gather the facts Loonie already holds, do the work, and hand you a
-          decision you can act on &mdash; every step below is something Loonie does today.
-        </p>
-
-        <div class="demo" id="demo">
-          <div class="demo-tabs" role="tablist" aria-label="Example questions">
-            <button class="demo-tab is-active" role="tab" type="button" data-scenario="0">Pay debt or invest?</button>
-            <button class="demo-tab" role="tab" type="button" data-scenario="1">Am I on track?</button>
-            <button class="demo-tab" role="tab" type="button" data-scenario="2">What if it goes wrong?</button>
-            <button class="demo-tab" role="tab" type="button" data-scenario="3">Drop in a statement</button>
-            <button class="demo-tab" role="tab" type="button" data-scenario="4">Any currency</button>
-          </div>
-
-          <div class="demo-window">
-            <div class="demo-chat" aria-live="polite">
-              <div class="demo-msg demo-user"><span id="demo-prompt"></span><i class="demo-caret" aria-hidden="true"></i></div>
-              <ol class="demo-steps" id="demo-steps"></ol>
-              <div class="demo-result" id="demo-result" hidden>
-                <div class="demo-result-label">Loonie</div>
-                <div class="demo-result-title" id="demo-result-title"></div>
-                <p class="demo-result-body" id="demo-result-body"></p>
-                <span class="mock-btn" id="demo-result-cta"></span>
-              </div>
-            </div>
-
-            <aside class="demo-side">
-              <p class="demo-side-title">Context Loonie computes for you</p>
-              <div class="demo-chips" id="demo-chips">
-                <span class="demo-chip" data-ctx="networth">Net worth</span>
-                <span class="demo-chip" data-ctx="runway">Cash runway</span>
-                <span class="demo-chip" data-ctx="cashflow">Cash flow</span>
-                <span class="demo-chip" data-ctx="goals">Goals</span>
-                <span class="demo-chip" data-ctx="budget">Budgets</span>
-                <span class="demo-chip" data-ctx="allocation">Allocation</span>
-              </div>
-              <div class="demo-generic">
-                <p class="demo-side-title">A general chatbot</p>
-                <p class="demo-generic-text" id="demo-generic"></p>
-              </div>
-            </aside>
-          </div>
-          <p class="demo-note muted">
-            Example figures are illustrative. Loonie runs on your own accounts, goals and statements.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- TAGLINE: PLAN / DECIDE / PIVOT -->
-    <section class="section section-alt" id="tagline">
-      <div class="container">
-        <h2 class="section-title">Plan with purpose. Decide with clarity. Pivot with confidence.</h2>
-        <p class="section-lede">Three moments every financial life goes through &mdash; and what Loonie does in each.</p>
-
-        <div class="tri-grid">
-          <div class="tri-card tri-plan reveal">
-            <p class="tri-word">Plan</p>
-            <h3>with purpose</h3>
-            <ul>
-              <li>Goals that tell you the monthly amount they need &mdash; and whether you&apos;re on track, at risk or off track</li>
-              <li>Monthly and yearly budgets with history</li>
-              <li>Income forecast and net worth projections</li>
-              <li>A watchlist and research topics for ideas you&apos;re weighing</li>
-            </ul>
-          </div>
-          <div class="tri-card tri-decide reveal">
-            <p class="tri-word">Decide</p>
-            <h3>with clarity</h3>
-            <ul>
-              <li>Pilot: state the choice, list your options, get a recommendation with confidence</li>
-              <li>Nine advisor agents that explain your numbers in plain language</li>
-              <li>Every decision saved, so you can see why you chose it</li>
-              <li>An auto mode that works through a hard decision round by round</li>
-            </ul>
-          </div>
-          <div class="tri-card tri-pivot reveal">
-            <p class="tri-word">Pivot</p>
-            <h3>with confidence</h3>
-            <ul>
-              <li>Scenario sandbox: best, expected and worst cases, safely away from your real data</li>
-              <li>Adopt a scenario as your plan when life changes</li>
-              <li>Stress-test against a job loss, rate rise or market drop</li>
-              <li>Run history to compare results over time</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- DECISIONS -->
-    <section class="section" id="pilot">
+    <section class="section" id="guru">
       <div class="container">
         <div class="decision-layout">
           <div>
-            <p class="section-kicker">Meet Pilot</p>
+            <p class="section-kicker">Meet Guru</p>
             <h2 class="section-title">Just ask.</h2>
             <p class="section-lede">
-              Pilot is the one door to Loonie. Log an expense, drop in a bank statement, ask about your own numbers
-              or weigh a big decision &mdash; all in a single chat that remembers everything.
+              Guru knows your whole picture and brings in the right advisor. Ask a question, log a purchase,
+              or drop in a bank statement. It takes it from there.
             </p>
-            <ol class="flow-list">
-              <li><b>Ask</b> Type a question, a quick entry, or drop a PDF statement. Suggestions adapt as you type.</li>
-              <li><b>Ground</b> Loonie attaches your computed net worth, runway, cash flow and goals.</li>
-              <li><b>Recommend</b> You get a choice, a confidence level and the odds for every option.</li>
-              <li><b>Remember</b> Every chat is kept and searchable, so you can see why you chose what you did.</li>
-            </ol>
           </div>
 
           <div class="decision-mock reveal" aria-hidden="true">
             <div class="consent-head">
-              <strong>Pilot</strong>
-              <span class="consent-badge">Saved</span>
+              <strong>Guru</strong>
+              <span class="consent-badge">Example</span>
             </div>
-            <p class="decision-q">Pay down my loan faster, or invest an extra $500 a month?</p>
+            <p class="decision-q">What if I lose my job for six months?</p>
             <div class="prob-row">
-              <div class="prob-label"><span>Invest the extra</span><b>71%</b></div>
-              <div class="prob-track"><i class="prob-fill prob-fill-top" style="--w:71%"></i></div>
+              <div class="prob-label"><span>Savings left after six months</span><b>73%</b></div>
+              <div class="prob-track"><i class="prob-fill prob-fill-top" style="--w:73%"></i></div>
             </div>
             <div class="prob-row">
-              <div class="prob-label"><span>Pay down the loan</span><b>29%</b></div>
-              <div class="prob-track"><i class="prob-fill" style="--w:29%"></i></div>
+              <div class="prob-label"><span>Months you could cover</span><b>22</b></div>
+              <div class="prob-track"><i class="prob-fill" style="--w:88%"></i></div>
             </div>
-            <p class="decision-foot">Grounded in your profile snapshot &middot; kept in your decision history</p>
-          </div>
-        </div>
-
-        <h3 class="subhead">The decisions everyone faces</h3>
-        <div class="big-grid">
-          <div class="big-card reveal">
-            <p class="big-q">&ldquo;Can I still buy a home on my timeline?&rdquo;</p>
-            <p class="big-use">Goals &middot; Scenario sandbox</p>
-          </div>
-          <div class="big-card reveal">
-            <p class="big-q">&ldquo;Pay off debt, or invest?&rdquo;</p>
-            <p class="big-use">Pilot &middot; Investment Planner</p>
-          </div>
-          <div class="big-card reveal">
-            <p class="big-q">&ldquo;Can I afford to take the job, or the risk?&rdquo;</p>
-            <p class="big-use">Stress tests &middot; Pilot</p>
-          </div>
-          <div class="big-card reveal">
-            <p class="big-q">&ldquo;Keep, sell or buy more of this asset?&rdquo;</p>
-            <p class="big-use">Asset Advisor &middot; Net worth</p>
-          </div>
-          <div class="big-card reveal">
-            <p class="big-q">&ldquo;How big should my safety net be?&rdquo;</p>
-            <p class="big-use">Cash runway &middot; Risk Hedging Agent</p>
-          </div>
-          <div class="big-card reveal">
-            <p class="big-q">&ldquo;Am I saving enough for the life I want?&rdquo;</p>
-            <p class="big-use">Income forecast &middot; Goal Planner</p>
+            <p class="decision-foot">Illustrative numbers. Guru uses your own.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- COMPARE -->
-    <section class="section section-alt" id="compare">
+    <section class="section section-alt" id="how">
       <div class="container">
-        <h2 class="section-title">Same question. A very different starting line.</h2>
-        <p class="section-lede">
-          Most tools start with a blank page or a manual spreadsheet. Loonie starts with your numbers already
-          computed &mdash; then does the thinking with you.
-        </p>
-
-        <div class="cmp-wrap reveal">
-          <table class="cmp-table">
-            <thead>
-              <tr>
-                <th></th>
-                <th class="cmp-loonie">Loonie</th>
-                <th>General AI chatbot</th>
-                <th>Budgeting app</th>
-                <th>Spreadsheet</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">Works from your real numbers</th>
-                <td class="cmp-loonie"><span class="cmp-yes" title="Yes"><i class="sr">Yes</i></span></td>
-                <td><span class="cmp-no" title="No"><i class="sr">No</i></span></td>
-                <td><span class="cmp-yes" title="Yes"><i class="sr">Yes</i></span></td>
-                <td><span class="cmp-part" title="Partly, by hand"><i class="sr">Partly</i></span></td>
-              </tr>
-              <tr>
-                <th scope="row">Turns them into a recommendation</th>
-                <td class="cmp-loonie"><span class="cmp-yes" title="Yes"><i class="sr">Yes</i></span></td>
-                <td><span class="cmp-part" title="Partly, from generic assumptions"><i class="sr">Partly</i></span></td>
-                <td><span class="cmp-part" title="Partly"><i class="sr">Partly</i></span></td>
-                <td><span class="cmp-no" title="No"><i class="sr">No</i></span></td>
-              </tr>
-              <tr>
-                <th scope="row">Structured decisions you can revisit</th>
-                <td class="cmp-loonie"><span class="cmp-yes" title="Yes"><i class="sr">Yes</i></span></td>
-                <td><span class="cmp-no" title="No"><i class="sr">No</i></span></td>
-                <td><span class="cmp-no" title="No"><i class="sr">No</i></span></td>
-                <td><span class="cmp-no" title="No"><i class="sr">No</i></span></td>
-              </tr>
-              <tr>
-                <th scope="row">Stress-tests you against shocks</th>
-                <td class="cmp-loonie"><span class="cmp-yes" title="Yes"><i class="sr">Yes</i></span></td>
-                <td><span class="cmp-part" title="Partly, in general terms"><i class="sr">Partly</i></span></td>
-                <td><span class="cmp-no" title="No"><i class="sr">No</i></span></td>
-                <td><span class="cmp-part" title="Partly, if you build it"><i class="sr">Partly</i></span></td>
-              </tr>
-              <tr>
-                <th scope="row">Your data stays on your computer</th>
-                <td class="cmp-loonie"><span class="cmp-yes" title="Yes"><i class="sr">Yes</i></span></td>
-                <td><span class="cmp-no" title="No"><i class="sr">No</i></span></td>
-                <td><span class="cmp-no" title="No"><i class="sr">No</i></span></td>
-                <td><span class="cmp-yes" title="Yes"><i class="sr">Yes</i></span></td>
-              </tr>
-            </tbody>
-          </table>
-          <p class="cmp-legend muted">
-            <span class="cmp-yes"></span> Yes &nbsp; <span class="cmp-part"></span> Partly &nbsp; <span class="cmp-no"></span> No
-            &middot; A comparison of typical tools in each category.
-          </p>
-        </div>
-
-        <div class="why-grid">
-          <div class="why-card reveal">
-            <div class="why-num">01</div>
-            <h3>Context that&apos;s already there</h3>
-            <p>Net worth, runway, cash flow, goals and allocation are computed from your accounts. You never re-explain your finances.</p>
+        <h2 class="section-title">How Loonie helps</h2>
+        <div class="tri-grid">
+          <div class="tri-card tri-plan reveal">
+            <p class="tri-word">Plan</p>
+            <h3>with purpose</h3>
+            <p>Set goals and budgets, and see if you are on track.</p>
           </div>
-          <div class="why-card reveal">
-            <div class="why-num">02</div>
-            <h3>Numbers computed, never invented</h3>
-            <p>Loonie calculates every figure first. AI only explains numbers that exist, so advice can&apos;t drift from your reality.</p>
+          <div class="tri-card tri-decide reveal">
+            <p class="tri-word">Decide</p>
+            <h3>with clarity</h3>
+            <p>Weigh your options and get a clear recommendation.</p>
           </div>
-          <div class="why-card reveal">
-            <div class="why-num">03</div>
-            <h3>A partner that remembers</h3>
-            <p>Decisions, stress-test runs and scenarios are kept, so today&apos;s advice builds on everything you decided before.</p>
+          <div class="tri-card tri-pivot reveal">
+            <p class="tri-word">Pivot</p>
+            <h3>with confidence</h3>
+            <p>Test &ldquo;what if&rdquo; before life changes anything.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- DASHBOARD PREVIEW -->
-    <section class="section" id="picture">
+    <section class="section" id="trust">
       <div class="container">
-        <h2 class="section-title">See the whole picture.</h2>
-        <p class="section-lede">The context behind every answer lives in one private dashboard you fully control.</p>
-
-        <div class="app-window" aria-hidden="true">
-          <div class="app-titlebar">
-            <span class="app-dot"></span><span class="app-dot"></span><span class="app-dot"></span>
-            <span class="app-title">Loonie &middot; Dashboard</span>
-          </div>
-          <div class="app-body">
-            <aside class="app-sidebar">
-              <span class="app-nav app-nav-active">Dashboard</span>
-              <span class="app-nav">Pilot</span>
-              <span class="app-nav-label">Wealth</span>
-              <span class="app-nav">Accounts</span>
-              <span class="app-nav">Budgets</span>
-              <span class="app-nav">Goals</span>
-              <span class="app-nav">Currencies</span>
-              <span class="app-nav">Insights</span>
-            </aside>
-            <div class="app-content">
-              <div class="app-stats">
-                <div class="app-stat"><span>Net worth</span><strong>$84,210</strong><em class="up">+3.2% this month</em></div>
-                <div class="app-stat"><span>Cash runway</span><strong>7.4 mo</strong><em>of essential spend</em></div>
-                <div class="app-stat"><span>Savings rate</span><strong>21%</strong><em class="up">on track</em></div>
-              </div>
-              <div class="app-card">
-                <div class="app-card-row"><span>Emergency fund</span><span>$9,300 / $12,000</span></div>
-                <div class="app-progress"><i style="width:78%"></i></div>
-                <div class="app-card-row"><span>Home down payment</span><span>$31,500 / $60,000</span></div>
-                <div class="app-progress"><i style="width:52%"></i></div>
-              </div>
-              <div class="app-insight">
-                <strong>Insight</strong> Dining is trending 18% over budget — trimming $120/mo keeps your home goal on schedule.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- JUMP START -->
-    <section class="section section-alt" id="start">
-      <div class="container">
-        <h2 class="section-title">Up and running in three steps</h2>
-        <p class="section-lede">No config files to edit. Everything happens inside the app.</p>
-        <div class="steps">
-          <div class="step">
-            <span class="step-num">1</span>
-            <h3>Install</h3>
-            <p>Download the Windows installer and run it. Loonie sets up its private local engine on first launch.</p>
-          </div>
-          <div class="step">
-            <span class="step-num">2</span>
-            <h3>Create your account</h3>
-            <p>Pick an email and password. Every account keeps its own separate workspace, and you can add more anytime.</p>
-          </div>
-          <div class="step">
-            <span class="step-num">3</span>
-            <h3>Add your first account</h3>
-            <p>A guided tour helps you add a goal, an account, or import a bank statement in minutes.</p>
-          </div>
-          <div class="step step-optional">
-            <span class="step-num">+</span>
-            <h3>Connect AI (optional)</h3>
-            <p>One click for LM Studio or Ollama, with a built-in connection test. Skip it and everything else still works.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FEATURES -->
-    <section class="section" id="features">
-      <div class="container">
-        <h2 class="section-title">Everything for your money, in one place</h2>
-        <p class="section-lede">The Wealth module is live today — and it&apos;s deep.</p>
-        <div class="feature-grid">
-          <div class="feature-card"><h3>Net worth &amp; accounts</h3><p>Chequing, savings, investments, retirement, loans and property — liquid vs. illiquid at a glance.</p></div>
-          <div class="feature-card"><h3>Budgets that fit real life</h3><p>Monthly and yearly budgets aligned to your own financial year, with history by month, quarter or year.</p></div>
-          <div class="feature-card"><h3>Goals with a verdict</h3><p>See the monthly contribution each goal needs and whether you&apos;re on track, at risk or off track.</p></div>
-          <div class="feature-card"><h3>Statement import</h3><p>Drop a CSV or PDF statement into Pilot. Loonie finds the account, extracts, categorizes and de-duplicates every transaction for review.</p></div>
-          <div class="feature-card"><h3>Scenario sandbox</h3><p>Draft best, expected and worst-case futures with per-account growth rates — without touching real data.</p></div>
-          <div class="feature-card"><h3>Any currency</h3><p>Hold accounts in any currency and see one net worth in your own. Live rates, with a manual override when you want it.</p></div>
-          <div class="feature-card"><h3>Pilot</h3><p>One searchable chat for quick entries, statements, questions about your data and decisions grounded in your own profile.</p></div>
-          <div class="feature-card"><h3>Accounts &amp; sync</h3><p>Multiple accounts with a Gmail-style chooser, optional Loonie Cloud sync across devices, light and dark themes, Drive backup and signed updates.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CURRENCY -->
-    <section class="section section-alt" id="currency">
-      <div class="container decision-layout">
-        <div>
-          <p class="section-kicker">Multi-currency</p>
-          <h2 class="section-title">Any currency. One net worth.</h2>
-          <p class="section-lede">
-            Keep an account in dollars, another in rupees, an asset in euros. Loonie converts everything into the
-            currency you think in and shows you where your money actually sits.
-          </p>
-          <ul class="check-list">
-            <li><strong>Live exchange rates,</strong> refreshed for you, with a backup source if one is down.</li>
-            <li><strong>Pin a rate</strong> when you want to use your own number, such as your bank&apos;s.</li>
-            <li><strong>See the breakdown</strong> of net worth by currency, not just the total.</li>
-          </ul>
-        </div>
-        <div class="decision-mock reveal" aria-hidden="true">
-          <div class="consent-head">
-            <strong>Net worth by currency</strong>
-            <span class="consent-badge">Illustrative</span>
-          </div>
-          <div class="prob-row">
-            <div class="prob-label"><span>CAD</span><b>58%</b></div>
-            <div class="prob-track"><i class="prob-fill prob-fill-top" style="--w:58%"></i></div>
-          </div>
-          <div class="prob-row">
-            <div class="prob-label"><span>USD</span><b>27%</b></div>
-            <div class="prob-track"><i class="prob-fill" style="--w:27%"></i></div>
-          </div>
-          <div class="prob-row">
-            <div class="prob-label"><span>INR</span><b>15%</b></div>
-            <div class="prob-track"><i class="prob-fill" style="--w:15%"></i></div>
-          </div>
-          <p class="decision-foot">Everything shown in your base currency</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ADVISORS -->
-    <section class="section" id="advisors">
-      <div class="container market-layout">
-        <div>
-          <p class="section-kicker">Advisors</p>
-          <h2 class="section-title">Stress-test your finances like a bank would.</h2>
-          <p class="section-lede">
-            Advisors are small packs that teach Pilot new skills &mdash; a job loss, a rate shock, a market correction.
-            Ask a question in your own words and the right advisor steps in.
-          </p>
-          <ul class="check-list">
-            <li><strong>You allow every look.</strong> Pilot lists the data an advisor wants to read and asks first. Nothing you decline is ever shared.</li>
-            <li><strong>It works on your computer.</strong> Advisors are just instructions; the numbers are run on your own data, and nobody receives it.</li>
-            <li><strong>Remembers your choices.</strong> Review or revoke access any time in Settings.</li>
-            <li><strong>Build your own.</strong> Write one file with LocalAgents and publish it to Loonie in a few commands.</li>
-          </ul>
-          <p class="muted">Powered by <a href="https://localagents.ai/advisors" target="_blank" rel="noreferrer">LocalAgents</a>, the open local-first agent toolkit.</p>
-        </div>
-
-        <div class="consent-mock" aria-hidden="true">
-          <div class="consent-head">
-            <strong>Job Loss wants to look at</strong>
-            <span class="consent-badge">Advisor</span>
-          </div>
-          <p class="consent-sub">Choose exactly which of your computed figures it may use.</p>
-          <label class="consent-row"><span class="consent-box on"></span><span><b>Net worth</b><small>Liquid, investment and personal-asset buckets</small></span></label>
-          <label class="consent-row"><span class="consent-box on"></span><span><b>Liquidity &amp; cash buffer</b><small>Runway in months of essential spending</small></span></label>
-          <label class="consent-row"><span class="consent-box on"></span><span><b>Cash flow history</b><small>Monthly income, expenses and net</small></span></label>
-          <label class="consent-row"><span class="consent-box"></span><span><b>Savings goals</b><small>Targets, dates and on-track status</small></span></label>
-          <div class="consent-actions"><span class="mock-btn">Allow and run</span><span class="mock-link">Not now</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- AI -->
-    <section class="section" id="ai">
-      <div class="container ai-layout">
-        <div>
-          <h2 class="section-title">AI that understands the bigger picture.</h2>
-          <p class="section-lede">
-            Loonie connects the signals across your finances to help you understand trade-offs,
-            opportunities and next steps.
-          </p>
-          <p class="muted">
-            Every number is computed by Loonie first — AI only explains figures that already exist, never
-            invents them. Bring your own model with LM Studio or Ollama, or leave AI off entirely.
-          </p>
-        </div>
-        <div class="ai-examples">
-          <div class="ai-bubble">&ldquo;Can I afford this trip without delaying my home goal?&rdquo;</div>
-          <div class="ai-bubble">&ldquo;What happens to my runway if rates rise 2 points?&rdquo;</div>
-          <div class="ai-bubble">&ldquo;Why did my spending increase this month?&rdquo;</div>
-          <div class="ai-bubble">&ldquo;What happens if I save $300 more per month?&rdquo;</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ONE LIFE ONE VIEW -->
-    <section class="section section-alt">
-      <div class="container">
-        <h2 class="section-title">One life. One view.</h2>
-        <p class="section-lede">
-          Money affects travel. Health affects goals. Habits affect wealth. Loonie starts with Wealth and is
-          growing into every area where you plan, analyse and decide.
-        </p>
-        <div class="module-grid">
-          <div class="module-card module-live"><span class="module-badge">Live</span><h3>Wealth</h3><p>Accounts, budgets, goals, net worth, forecasting, decisions &amp; stress tests.</p></div>
-          <div class="module-card"><span class="module-badge module-badge-soon">Coming soon</span><h3>Health</h3><p>Physical &amp; mental capacity.</p></div>
-          <div class="module-card"><span class="module-badge module-badge-soon">Coming soon</span><h3>Learning</h3><p>Knowledge capital.</p></div>
-          <div class="module-card"><span class="module-badge module-badge-soon">Coming soon</span><h3>Travel</h3><p>Experiences &amp; perspective.</p></div>
-          <div class="module-card"><span class="module-badge module-badge-soon">Coming soon</span><h3>Goals</h3><p>Direction &amp; achievement.</p></div>
-          <div class="module-card"><span class="module-badge module-badge-soon">Coming soon</span><h3>Habits</h3><p>Daily compounding.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PRIVACY -->
-    <section class="section" id="privacy">
-      <div class="container privacy-layout">
-        <div>
-          <h2 class="section-title">Your life belongs to you.</h2>
-          <p class="section-lede">Privacy isn&apos;t a setting in Loonie. It&apos;s the architecture.</p>
-        </div>
-        <ul class="privacy-list">
-          <li><strong>Local by default.</strong> Your data lives in a private database on your own computer.</li>
-          <li><strong>Consent for every agent.</strong> Advisors only see the categories you explicitly grant — enforced by the app, not just the screen.</li>
-          <li><strong>AI when you choose.</strong> Every calculation works with AI turned off. Turn it on with a model that runs on your machine.</li>
-          <li><strong>Sync only if you want it.</strong> Loonie Cloud is optional — nothing leaves your computer until you link an account. No telemetry.</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- PROMISE -->
-    <section class="section section-alt" id="promise">
-      <div class="container">
-        <h2 class="section-title">What we commit to.</h2>
-        <p class="section-lede">A co-partner earns trust by being clear about how it works. These are the promises we build by.</p>
         <div class="promise-grid">
-          <div class="promise-card reveal"><h3>Free and open source</h3><p>Loonie is free to use and its code is public, so you can see exactly what it does.</p></div>
-          <div class="promise-card reveal"><h3>Numbers are computed</h3><p>Every figure comes from your data and real calculations, never from a model&apos;s guess.</p></div>
-          <div class="promise-card reveal"><h3>You stay in control</h3><p>Your data, your consent, your decision. Loonie recommends; you choose.</p></div>
-          <div class="promise-card reveal"><h3>Honest about limits</h3><p>Loonie is a decision aid, not a licensed financial adviser. Big calls deserve a professional too.</p></div>
+          <div class="promise-card reveal"><h3>Private</h3><p>Your data stays on your computer.</p></div>
+          <div class="promise-card reveal"><h3>Free</h3><p>No account fees. No ads.</p></div>
+          <div class="promise-card reveal"><h3>Honest</h3><p>Guidance, not licensed financial advice.</p></div>
         </div>
       </div>
     </section>
 
-    <!-- DOWNLOAD -->
-    <section class="section" id="download">
+    <section class="section section-alt" id="download">
       <div class="container">
         <h2 class="section-title">Get Loonie for Windows</h2>
-        <p class="section-lede">Free, open source, and updates itself automatically.</p>
-
         <div class="download-grid">
           <div class="install-card">
-            <p class="install-label">Recommended</p>
-            <h3>Windows installer</h3>
-            <p class="muted">Needs Python 3.11+ (<a href="https://www.python.org/downloads/" target="_blank" rel="noreferrer">free download</a>, tick &ldquo;Add to PATH&rdquo;). Then run the installer and launch Loonie from the Start menu.</p>
+            <ol class="flow-list">
+              <li><b>Install Python</b> once, if you don&rsquo;t have it (<a href="https://www.python.org/downloads/" target="_blank" rel="noreferrer">free</a>; tick &ldquo;Add to PATH&rdquo;).</li>
+              <li><b>Run the installer</b> you download below.</li>
+              <li><b>Open Loonie</b> from the Start menu.</li>
+            </ol>
             <a href="https://github.com/harshbhalodia/loonie/tree/main/installer" class="btn btn-primary btn-lg js-download">Download <span class="js-version-inline"></span></a>
-            <p class="muted install-foot"><span class="js-version">Latest version</span> &middot; <a href="https://github.com/harshbhalodia/loonie/blob/main/CHANGELOG.md" target="_blank" rel="noreferrer">What&apos;s new</a></p>
-          </div>
-
-          <div class="install-card">
-            <p class="install-label">No Python yet?</p>
-            <h3>One-line install</h3>
-            <p class="muted">Open PowerShell and paste this. It installs Python if needed, then downloads and launches the latest installer.</p>
-            <div class="install-command">
-              <code id="install-cmd">irm https://raw.githubusercontent.com/harshbhalodia/loonie/main/install.ps1 | iex</code>
-              <button class="btn btn-ghost btn-sm" id="copy-btn" type="button">Copy</button>
-            </div>
-            <p class="muted install-foot"><a href="https://github.com/harshbhalodia/loonie/blob/main/install.ps1" target="_blank" rel="noreferrer">Read the script first</a></p>
+            <p class="muted install-foot"><span class="js-version">Latest version</span> &middot; updates itself &middot; <a href="https://github.com/harshbhalodia/loonie/blob/main/CHANGELOG.md" target="_blank" rel="noreferrer">What&rsquo;s new</a></p>
           </div>
         </div>
       </div>
@@ -587,12 +148,10 @@
         <a href="https://github.com/harshbhalodia/loonie" target="_blank" rel="noreferrer">GitHub</a>
         <a href="https://github.com/harshbhalodia/loonie/blob/main/CHANGELOG.md" target="_blank" rel="noreferrer">Changelog</a>
         <a href="https://localagents.ai" target="_blank" rel="noreferrer">LocalAgents</a>
-        <a href="https://localagents.ai/advisors" target="_blank" rel="noreferrer">Build an advisor</a>
-        <a href="#privacy">Privacy</a>
       </div>
     </div>
     <div class="container">
-      <p class="muted footer-copy">&copy; 2026 Loonie. Built for calm, private software. Loonie is a decision aid, not financial advice.</p>
+      <p class="muted footer-copy">&copy; 2026 Loonie. Loonie is a decision aid, not financial advice.</p>
     </div>
   </footer>
 
