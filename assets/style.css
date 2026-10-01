@@ -2568,3 +2568,12 @@ html:not(.js) .cmp-table tbody tr {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+#why,
+#pick-question {
+  scroll-margin-top: 88px;
+}
+
+.hero-meta-key {
+  color: var(--text);
+  font-weight: 700;
+}
