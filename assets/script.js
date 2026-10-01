@@ -70,86 +70,70 @@ function initReveal() {
   })
 }
 
-// Every scenario mirrors something Guru really does: decisions, goal checks, advisor stress tests,
-// statement import and multi-currency. Figures are illustrative.
 function initStoryDemo() {
   const root = document.getElementById('demo')
   if (!root) return
 
   const scenarios = [
     {
-      prompt: 'Should I pay down my loan faster, or invest an extra $500 a month?',
+      prompt: 'Is it worth applying for an AMEX Moneyback credit card in my current situation?',
       steps: [
-        { ctx: ['networth', 'runway'], title: 'Built your profile snapshot', detail: 'Net worth and cash runway are computed from your accounts, not typed in. Runway: 7.4 months.' },
-        { ctx: ['cashflow'], title: 'Read your real cash flow', detail: 'Six months of income and spending confirm the $500 is genuinely spare.' },
-        { ctx: ['goals'], title: 'Checked what it does to your goals', detail: 'Your home goal stays on track either way.' },
-        { action: true, title: 'Weighed both options', detail: 'Your two options and your profile go in; a choice, confidence and odds come back.' },
-        { action: true, title: 'Saved it to your history', detail: 'Every Guru chat is searchable, so you can revisit why you chose it.' },
+        { action: true, title: 'Research the exact card and current terms', detail: 'Confirm your country and product. Check official fees, reward caps, exclusions and merchant acceptance; flag missing sources.' },
+        { ctx: ['cashflow', 'budget'], title: 'Match benefits to your actual spending', detail: 'Estimate eligible rewards from your categories, rather than assuming every purchase earns cashback.' },
+        { ctx: ['runway', 'goals'], title: 'Check whether another card fits your life', detail: 'Include repayment habits, upcoming borrowing and your existing cards.' },
+        { action: true, title: 'Compare net value, not the headline offer', detail: 'Subtract fees and potential interest. Separate one-off welcome offers from ongoing value.' },
       ],
-      result: { title: 'Invest it \u2014 71% confidence', body: 'Your runway is healthy and your expected returns beat your loan rate.', cta: 'Kept in your Guru history' },
-      tiles: [['Invest', '71%'], ['Pay down', '29%'], ['Runway', '7.4 mo']],
-      generic: '\u201CIt depends on your interest rate, risk tolerance and goals. Could you share your loan rate, income and savings?\u201D',
+      result: { title: 'Apply only if the ongoing value stacks up', body: 'In this example, $180 in eligible annual rewards minus a $120 fee leaves $60 before interest. Verify the actual terms and compare with your current card before applying.', cta: 'Decision: verify terms first' },
+      tiles: [['Example rewards', '$180/yr'], ['Example fee', '$120/yr'], ['Net before interest', '$60/yr']],
+      generic: 'An AI tool can research card terms. Loonie adds your spending, existing commitments and goals to assess whether the offer fits you.',
     },
     {
-      prompt: 'Am I on track to buy a home in three years?',
+      prompt: 'Would changing my payment approach help me get better rewards?',
       steps: [
-        { ctx: ['goals'], title: 'Read your goal and its target date', detail: 'Down payment: $31,500 of $60,000.' },
-        { ctx: ['cashflow', 'budget'], title: 'Compared what you need with what you save', detail: 'Needs $1,020 a month; your three-month average is $1,150.' },
-        { action: true, title: 'Drafted best, expected and worst cases', detail: 'In the scenario sandbox. Nothing touches your real data.' },
-        { ctx: ['networth', 'allocation'], title: 'Projected each account at its own growth rate', detail: 'Savings and investments grow differently, so they are modelled separately.' },
+        { ctx: ['cashflow', 'budget'], title: 'Review where and how you pay', detail: 'Group recurring bills and purchases by merchant, category and current payment method.' },
+        { action: true, title: 'Compare eligible payment options', detail: 'Check reward rates, caps, exclusions, payment fees and acceptance against verified terms.' },
+        { ctx: ['goals', 'runway'], title: 'Keep spending and repayments unchanged', detail: 'Only reroute purchases you already make; no extra spending or carried balances to chase rewards.' },
+        { action: true, title: 'Calculate the benefit after costs', detail: 'Exclude payments where a surcharge exceeds the extra reward.' },
       ],
-      result: { title: 'On track \u2014 with a $130/mo cushion', body: 'In the worst case you slip about five months. Adopt the expected case as your plan.', cta: 'Adopt this scenario' },
-      tiles: [['You need', '$1,020/mo'], ['You save', '$1,150/mo'], ['Cushion', '$130/mo']],
-      generic: '\u201CTo estimate that, please share your savings, income, target price and expected returns.\u201D',
+      result: { title: 'Change the payment route, not your lifestyle', body: 'Illustratively, moving $600/month of eligible spending from 1% to 2% earns $6/month more, before any fees. Keep full repayments and skip surcharge-heavy payments.', cta: 'Review eligible payments' },
+      tiles: [['Eligible spend', '$600/mo'], ['Rate uplift', '1 point'], ['Before fees', '+$6/mo']],
+      generic: 'Reward advice becomes useful when it accounts for your merchants, payment fees and repayment habits, not just advertised rates.',
     },
     {
-      prompt: 'Do I have enough risk covered for my current profile, or would you change anything?',
+      prompt: 'What if my salary is reduced by 20%?',
       steps: [
-        { ctx: ['networth', 'allocation'], title: 'Looked at each goal and asset one by one', detail: 'Emergency fund, home down payment, investments, car and income.' },
-        { ctx: ['goals'], title: 'Listed each one\u2019s advantage and its risk', detail: 'Investments grow but are 68% of your net worth. The emergency fund is safe but slowly loses value to inflation.' },
-        { action: true, title: 'Stress-tested the weak spots together', detail: 'A 20% market drop at the same time as a job loss.' },
-        { ctx: ['runway'], title: 'Noted what it cannot see yet', detail: 'Insurance is not in Loonie yet. Tell Guru about your policies and it will include them.' },
+        { ctx: ['cashflow'], title: 'Separate gross salary from take-home income', detail: 'Confirm which salary changes and when. This example assumes take-home pay falls from $5,000 to $4,000/month.' },
+        { ctx: ['budget'], title: 'Protect essential commitments', detail: 'With $3,600/month of expenses, the monthly surplus falls from $1,400 to $400.' },
+        { ctx: ['goals', 'runway'], title: 'Recheck savings goals and your buffer', detail: 'Compare planned contributions with the lower surplus and review your emergency reserve.' },
+        { action: true, title: 'Model adjustments before changing your plan', detail: 'Compare slower goal funding and optional expense reductions in a what-if scenario.' },
       ],
-      result: { title: 'Mostly covered, with two gaps', body: 'Consider moving about 10% from stocks into cash-like holdings, and add your insurance so Guru can check your income protection.', cta: 'See each goal and asset' },
-      tiles: [['Covered', '3 of 5'], ['Gaps', '2'], ['Biggest risk', 'Stocks 68%']],
-      generic: '\u201CEveryone\u2019s risk is different. You may want to speak to a financial adviser about insurance and diversification.\u201D',
+      result: { title: 'Essentials hold. Your goals need a new pace.', body: 'This example still has a $400 monthly surplus, but $1,000 less room for savings. Adjust contributions and target dates before using your emergency fund.', cta: 'Review the lower-income scenario' },
+      tiles: [['Income change', '-20%'], ['Expenses', '$3,600/mo'], ['New surplus', '$400/mo']],
+      generic: 'A salary shock needs your actual income, committed spending and goal timelines. A percentage alone cannot show what you can still afford.',
     },
     {
-      prompt: 'What happens if I lose my job and rates rise?',
+      prompt: 'What should my investment strategy be based on current market conditions?',
       steps: [
-        { ctx: ['networth', 'runway', 'cashflow'], title: 'Brought in the Job Loss advisor and asked first', detail: 'Guru lists what it wants to read. Anything you decline stays private.' },
-        { action: true, title: 'Ran each shock as its own specialist', detail: 'Job loss, rate rise and market drop, each analysed separately.' },
-        { ctx: ['allocation'], title: 'Found your weakest spot', detail: 'Investments are 68% of your net worth.' },
-        { action: true, title: 'Wrote one clear report', detail: 'Verdict, cash impact, pressure points and options, laid out to scan.' },
+        { action: true, title: 'Check dated market sources', detail: 'Review available rate, inflation and market information. Without fresh sources, flag the gap rather than claiming live knowledge.' },
+        { ctx: ['allocation', 'networth'], title: 'Review your portfolio concentration', detail: 'Compare your holdings with your chosen target allocation and identify outsized exposures.' },
+        { ctx: ['goals', 'runway'], title: 'Anchor the strategy to your time horizon', detail: 'Separate money needed soon from long-term investments and confirm your risk tolerance.' },
+        { action: true, title: 'Compare scenarios, not predictions', detail: 'Consider a market decline, flat returns and recovery, including fees and tax implications.' },
       ],
-      result: { title: 'Your runway holds in the job-loss case', body: 'Six months of expenses stay covered. A market drop is your riskiest scenario \u2014 consider rebalancing.', cta: 'Review in Settings \u203a Advisors' },
-      tiles: [['Runway', '22 mo'], ['6-month loss', '$19,140'], ['Riskiest', 'Market drop']],
-      generic: '\u201CLosing a job can be stressful. A good rule is an emergency fund of 3\u20136 months of expenses.\u201D',
+      result: { title: 'A plan for your horizon, not a market bet', body: 'In this example, protect near-term goal money and assess rebalancing toward your existing target. Current headlines do not justify guaranteed returns or an automatic buy/sell decision.', cta: 'Review allocation and assumptions' },
+      tiles: [['Market sources', 'Verify dates'], ['Near-term goals', 'Protect'], ['Long-term plan', 'Diversify']],
+      generic: 'AI tools can explain markets. A personal strategy also needs your holdings, liquidity needs, risk tolerance and investment horizon.',
     },
     {
-      prompt: 'Here is this month\u2019s card statement (PDF).',
+      prompt: 'Optimise my expenses by 10% without affecting my key budgets.',
       steps: [
-        { action: true, title: 'Recognised the statement and matched your account', detail: 'Guru works out which account it belongs to. You confirm if unsure.' },
-        { action: true, title: 'Read the PDF on your computer', detail: 'Every transaction extracted with your own local AI model.' },
-        { action: true, title: 'Applied your category rules', detail: 'Your keyword rules always beat the AI\u2019s guess.' },
-        { ctx: ['budget'], title: 'Checked it against your budgets', detail: 'Dining is 18% over its monthly budget.' },
-        { action: true, title: 'Skipped duplicates and suggested new rules', detail: 'New merchants become suggestions you approve.' },
+        { ctx: ['budget', 'goals'], title: 'Confirm which budgets are protected', detail: 'Keep housing, health, learning and other categories you mark as essential unchanged.' },
+        { ctx: ['cashflow'], title: 'Calculate a realistic savings target', detail: 'For $3,000/month of expenses, a 10% reduction means finding $300/month.' },
+        { action: true, title: 'Look for waste before cutting priorities', detail: 'Review unused subscriptions, duplicate services, avoidable fees and renegotiable bills.' },
+        { ctx: ['budget'], title: 'Check whether the target is achievable', detail: 'Only count verified savings. If unprotected spending cannot cover the target, show the shortfall.' },
       ],
-      result: { title: '42 transactions ready to review', body: 'Review them right in the chat; nothing is saved until you apply it.', cta: 'Review & apply' },
-      tiles: [['Found', '42'], ['Categorised', '38'], ['Need you', '4']],
-      generic: '\u201CPaste the transactions here and I\u2019ll try to sort them. Next month, paste them again.\u201D',
-    },
-    {
-      prompt: 'What is my net worth in CAD?',
-      steps: [
-        { ctx: ['networth'], title: 'Found accounts in three currencies', detail: 'Canadian dollars, US dollars and rupees.' },
-        { action: true, title: 'Fetched today\u2019s exchange rates', detail: 'From a live source, with a backup if it is down. A rate you pinned wins.' },
-        { ctx: ['allocation'], title: 'Converted everything into your base currency', detail: 'So one number adds up your whole picture.' },
-        { action: true, title: 'Kept the breakdown by currency', detail: 'You can see how much of it sits in each.' },
-      ],
-      result: { title: 'C$84,210 in total', body: 'One number for your whole picture, with each currency still visible on its own.', cta: 'Open Currencies' },
-      tiles: [['CAD', '58%'], ['USD', '27%'], ['INR', '15%']],
-      generic: '\u201CI can\u2019t see your accounts. Tell me the balances and today\u2019s rates and I\u2019ll add them up.\u201D',
+      result: { title: 'Find the savings. Keep your priorities.', body: 'Illustratively, $90 in unused subscriptions, $140 from renegotiated services and $70 in avoided fees meet the $300 target. Confirm each saving before changing your budgets.', cta: 'Review proposed savings' },
+      tiles: [['Monthly savings', '$300'], ['Expense reduction', '10%'], ['Key budgets', 'Unchanged']],
+      generic: 'A useful expense plan respects what you will not cut. The 10% target is a constraint to test, not a reason to invent savings.',
     },
   ]
 
@@ -279,6 +263,13 @@ function initStoryDemo() {
   }
 
   tabs.forEach((tab, i) => tab.addEventListener('click', () => select(i)))
+
+  document.querySelectorAll('a[href="#amex-moneyback"]').forEach((link) => {
+    link.addEventListener('click', () => {
+      select(0)
+      tabs[0].focus({ preventScroll: true })
+    })
+  })
 
   renderFinal(scenarios[0])
   if (reduceMotion || !('IntersectionObserver' in window)) return
