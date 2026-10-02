@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   // Same manifest the in-app auto-updater reads, so the download button always points at the
-  // current release without editing this page. Falls back to the GitHub installer folder.
+  // current release without editing this page. Falls back to the bundled release link.
   fetch('https://raw.githubusercontent.com/harshbhalodia/loonie/main/updater/latest.json', { cache: 'no-store' })
     .then((res) => (res.ok ? res.json() : Promise.reject(res.status)))
     .then((latest) => {
