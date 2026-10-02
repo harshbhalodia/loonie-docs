@@ -80,7 +80,7 @@ function initStoryDemo() {
       steps: [
         { action: true, title: 'Research the exact card and current terms', detail: 'Confirm your country and product. Check official fees, reward caps, exclusions and merchant acceptance; flag missing sources.' },
         { ctx: ['cashflow', 'budget'], title: 'Match benefits to your actual spending', detail: 'Estimate eligible rewards from your categories, rather than assuming every purchase earns cashback.' },
-        { ctx: ['runway', 'goals'], title: 'Check whether another card fits your life', detail: 'Include repayment habits, upcoming borrowing and your existing cards.' },
+        { ctx: ['runway', 'goals'], title: 'Check whether another card fits your needs', detail: 'Include repayment habits, upcoming borrowing and your existing cards.' },
         { action: true, title: 'Compare net value, not the headline offer', detail: 'Subtract fees and potential interest. Separate one-off welcome offers from ongoing value.' },
       ],
       result: { title: 'Apply only if the ongoing value stacks up', body: 'In this example, $180 in eligible annual rewards minus a $120 fee leaves $60 before interest. Verify the actual terms and compare with your current card before applying.', cta: 'Decision: verify terms first' },
